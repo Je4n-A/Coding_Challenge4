@@ -92,8 +92,11 @@ inventory.forEach(displayProductDetails);
     lowStockProducts.forEach(displayProductDetails);
  
  }
- console.log('\nCheck Low Stock Products');
+
+console.log('\nCheck Low Stock Products');
     checkLowStock(inventory);
+
+
 
 
 // Create a Function to Calculate Total Inventory Value
@@ -103,3 +106,19 @@ function calculateInventoryValue(inventory) {
 }
     console.log('\nCalculate Inventory Value'); 
     calculateInventoryValue(inventory);
+
+
+
+// Create a Function to Process a Sale 
+
+    function processSales(productName, unitsSold) {
+        const product = inventory.find(product => product.name === productName);
+        if (!product) {
+            console.log('Product not found');
+            return;
+        }
+        updateStock(productName, unitsSold);
+    }
+    console.log('\nProcess Sales');
+    processSales('GPU', 3);
+    processSales('DPU', 15);
