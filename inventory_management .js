@@ -1,8 +1,9 @@
 // Create an Inventory Array of Product Objects
+
 const inventory = [{
     name: 'GPU',
     price: 500.00,
-    quantity: 10,
+    quantity: 0,
     lowStockLevel: 5
 
 },
@@ -37,3 +38,21 @@ const inventory = [{
 }
 ];
 
+// Create a Function to Display Product details
+
+function displayProductDetails(product) {
+
+    console.log(`Product: ${product.name}`);
+    console.log(`Price: ${product.price}`);
+    console.log(`Quantity: ${product.quantity}`);
+    
+    if (product.quantity === 0) {
+        console.log('Out of Stock');
+    } else if (product.quantity <= product.lowStockLevel) {
+        console.log('Low Stock Level');
+    } else {
+        console.log('In Stock');
+    }
+}
+
+inventory.forEach(displayProductDetails);
