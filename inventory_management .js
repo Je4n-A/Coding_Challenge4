@@ -56,3 +56,31 @@ function displayProductDetails(product) {
 }
 
 inventory.forEach(displayProductDetails);
+
+// Create a Function to Update Product Stock After Sales 
+ function updateStock(productName, unitsSold) {
+    const product = inventory.find(product => product.name === productName);
+    if (!product) {
+        console.log('Product not found'); 
+        return;                               //ERROR MESSAGES                        
+    }                                         
+    if (unitsSold <= 0) {
+        console.log('Invalid units sold');  
+        return;
+    }
+    if (product.quantity >= unitsSold) {
+        product.quantity -= unitsSold;
+        console.log(`Updated ${productName} stock. New quantity: ${product.quantity}`);
+    } else {
+        console.log('Insufficient Stock');
+    }
+ }
+        console.log('Update Stock');
+        updateStock('GPU', 3); 
+        updateStock('CPU', 15);
+        updateStock('RAM', 50);
+        updateStock('SSD', 20);
+        updateStock('HDD', 30);
+        console.log('\nUpdated Inventory');
+        inventory.forEach(displayProductDetails);
+    
