@@ -83,4 +83,15 @@ inventory.forEach(displayProductDetails);
         updateStock('HDD', 30);
         console.log('\nUpdated Inventory');
         inventory.forEach(displayProductDetails);
-    
+
+
+// Create a Function to Check Low Stock Products
+ function checkLowStock(inventory) {
+    const lowStockProducts = inventory.filter(product => product.quantity <= product.lowStockLevel);
+    console.log('Low Stock Products');
+    lowStockProducts.forEach(displayProductDetails);
+ 
+ }
+ console.log('\nCheck Low Stock Products');
+    checkLowStock(inventory);
+
