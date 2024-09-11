@@ -95,3 +95,11 @@ inventory.forEach(displayProductDetails);
  console.log('\nCheck Low Stock Products');
     checkLowStock(inventory);
 
+
+// Create a Function to Calculate Total Inventory Value
+function calculateInventoryValue(inventory) {
+    const inventoryValue = inventory.reduce((total, product) => total + product.price * product.quantity, 0);
+    console.log(`Inventory Value: ${inventoryValue}`);
+}
+    console.log('\nCalculate Inventory Value'); 
+    calculateInventoryValue(inventory);
